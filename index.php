@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced Student Registration</title>
+    <title>Student Registration</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         /* General styling */
@@ -75,51 +75,69 @@
             background-color: #e65100;
         }
 
-        /* Info box styling */
-        .info-box {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: #e0f7fa;
-            margin: 20px;
+        /* Registration form styling */
+        .registration-form {
+            max-width: 500px;
+            margin: 40px auto;
             padding: 20px;
+            background-color: white;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        .info-content {
-            flex: 1;
-            margin-right: 20px;
-        }
-
-        .info-content h2 {
+        .registration-form h2 {
+            margin-bottom: 20px;
+            font-size: 32px;
             color: #00796b;
-            font-size: 28px;
-            margin-bottom: 12px;
+            text-align: center;
         }
 
-        .info-content p {
+        .registration-form label {
             font-size: 18px;
-            margin-bottom: 24px;
+            color: #333;
+            display: block;
+            margin-bottom: 10px;
         }
 
-        .info-link {
-            display: inline-block;
-            padding: 12px 24px;
+        .registration-form input[type="text"],
+        .registration-form input[type="email"],
+        .registration-form input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .registration-form button {
+            width: 100%;
+            padding: 14px;
             background-color: #00796b;
             color: white;
-            text-decoration: none;
-            font-size: 18px;
+            border: none;
             border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
-        .info-link:hover {
+        .registration-form button:hover {
             background-color: #004d40;
         }
 
-        .info-box img {
-            max-width: 250px;
-            border-radius: 12px;
+        .registration-form .error-message {
+            color: #e53935;
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .registration-form .success-message {
+            color: #43a047;
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-align: center;
         }
 
         /* Footer styling */
@@ -132,43 +150,6 @@
             width: 100%;
             bottom: 0;
             font-size: 16px;
-        }
-
-        /* Enhanced buttons */
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #ff5722;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 18px;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #ff9800;
-        }
-
-        /* Content section */
-        .content {
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .content h2 {
-            font-size: 36px;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .content p {
-            font-size: 20px;
-            margin-bottom: 40px;
-        }
-
-        .content .btn {
-            font-size: 20px;
         }
     </style>
 </head>
@@ -188,31 +169,56 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Welcome to the Student Registration Portal</h1>
-        <p>Register now to start your journey with us!</p>
-        <a href="#" class="btn">Get Started</a>
+        <h1>Student Registration Portal</h1>
+        <p>Register now to start your academic journey with us!</p>
+        <a href="#register" class="btn">Register Now</a>
     </section>
 
-    <!-- Info Box Section -->
-    <section class="content">
-        <h2>Our Programs</h2>
-        <p>We offer a variety of programs to help you succeed in your academic and professional goals.</p>
-        <div class="info-box">
-            <div class="info-content">
-                <h2>Program A</h2>
-                <p>Learn the basics of coding and programming with our beginner-friendly course.</p>
-                <a href="#" class="info-link">Learn More</a>
-            </div>
-            <img src="https://via.placeholder.com/250" alt="Program A">
-        </div>
-        <div class="info-box">
-            <div class="info-content">
-                <h2>Program B</h2>
-                <p>Advance your skills with our intermediate programming course.</p>
-                <a href="#" class="info-link">Learn More</a>
-            </div>
-            <img src="https://via.placeholder.com/250" alt="Program B">
-        </div>
+    <!-- Registration Form -->
+    <section id="register" class="registration-form">
+        <h2>Register</h2>
+
+        <?php
+        // Include your existing PHP registration logic here
+        $error = $success = '';
+
+        // Example PHP logic for handling form submission
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $name = $_POST['name'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+
+            // Add your validation and database insertion logic here
+            // Example:
+            if (empty($name) || empty($email) || empty($password)) {
+                $error = "All fields are required.";
+            } else {
+                // Assume registration is successful
+                $success = "Registration successful!";
+            }
+        }
+        ?>
+
+        <?php if ($error): ?>
+            <div class="error-message"><?php echo $error; ?></div>
+        <?php endif; ?>
+
+        <?php if ($success): ?>
+            <div class="success-message"><?php echo $success; ?></div>
+        <?php endif; ?>
+
+        <form method="post" action="">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+
+            <button type="submit">Register</button>
+        </form>
     </section>
 
     <!-- Footer -->
