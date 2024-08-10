@@ -1,8 +1,8 @@
 <?php
-$serverName = "tcp:wit-dbserver.database.windows.net,1433";
+$serverName = "tcp:birinderserver.database.windows.net,1433";
 $connectionOptions = array(
-    "Database" => "WITRegistrationDB",
-    "Uid" => "sqladmin",
+    "Database" => "db-final",
+    "Uid" => "dbuser",
     "PWD" => "P@ssw0rd"
 );
 
