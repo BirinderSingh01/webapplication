@@ -10,12 +10,12 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#">Programs and Courses</a></li>
+                <li><a href="#">All programs</a></li>
                 <li><a href="register.php">Registration</a></li>
-                <li><a href="#">Tuition and Financial Aid</a></li>
-                <li><a href="#">International</a></li>
+                <li><a href="#">Admissions</a></li>
+                <li><a href="#">International Life</a></li>
                 <li><a href="#">Student Life</a></li>
-                <li><a href="#">About WIT</a></li>
+                <li><a href="#">About Us</a></li>
             </ul>
         </nav>
     </header>
