@@ -75,7 +75,7 @@ header nav ul li a:hover {
 /* Footer styling */
 footer {
     text-align: center;
-    padding: 24px; /* More padding for footer */
+    padding: 16px; /* More padding for footer */
     background-color: #00796b; /* Teal footer background */
     color: white;
     position: fixed;
