@@ -1,6 +1,3 @@
-/* Existing styles for register.php */
-/* Add your existing register.php styles here */
-
 /* New styles for index.php */
 
 /* Navigation styling */
@@ -8,7 +5,7 @@ header nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    background-color: #b91d2d;
+    background-color: #ff5722; /* Bright orange for the nav bar */
     overflow: hidden;
 }
 
@@ -22,10 +19,11 @@ header nav ul li a {
     text-align: center;
     padding: 14px 20px;
     text-decoration: none;
+    font-weight: bold;
 }
 
 header nav ul li a:hover {
-    background-color: #990000;
+    background-color: #ff9800; /* Brighter orange on hover */
 }
 
 /* Info box styling */
@@ -33,11 +31,11 @@ header nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: white;
+    background-color: #e0f7fa; /* Light cyan background */
     margin: 20px;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 12px; /* Slightly larger border radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow */
 }
 
 .info-content {
@@ -46,41 +44,42 @@ header nav ul li a:hover {
 }
 
 .info-content h2 {
-    color: #b91d2d;
-    font-size: 24px;
-    margin-bottom: 10px;
+    color: #00796b; /* Teal color for headings */
+    font-size: 26px; /* Slightly larger font size */
+    margin-bottom: 12px;
 }
 
 .info-content p {
-    font-size: 16px;
-    margin-bottom: 20px;
+    font-size: 18px; /* Larger font size for better readability */
+    margin-bottom: 24px;
 }
 
 .info-link {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #b91d2d;
+    padding: 12px 24px;
+    background-color: #00796b; /* Matching teal color */
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 8px; /* Slightly larger border radius */
 }
 
 .info-link:hover {
-    background-color: #990000;
+    background-color: #004d40; /* Darker teal on hover */
 }
 
 .info-box img {
-    max-width: 200px;
-    border-radius: 8px;
+    max-width: 250px; /* Slightly larger image size */
+    border-radius: 12px; /* Larger border radius for images */
 }
 
 /* Footer styling */
 footer {
     text-align: center;
-    padding: 20px;
-    background-color: #b91d2d;
+    padding: 24px; /* More padding for footer */
+    background-color: #00796b; /* Teal footer background */
     color: white;
     position: fixed;
     width: 100%;
     bottom: 0;
+    font-size: 16px; /* Larger footer text */
 }
